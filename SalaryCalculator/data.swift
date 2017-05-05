@@ -14,4 +14,6 @@ struct items{
     static var holidayWorkTime = [String]() //for each day
     static var weekdayWorkTime = [String]()
     static var workDay = [String]()
+    static var breakBool = [String]()
+    static var today = String()
 }

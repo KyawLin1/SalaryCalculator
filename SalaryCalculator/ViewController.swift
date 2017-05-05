@@ -11,10 +11,15 @@ import Firebase
 
 class ViewController: UIViewController {
 
-    
+    private var breakTxt:String!
     @IBOutlet var datePickerTxt: UITextField!
     @IBOutlet var timePickerTxt: UITextField!
     @IBOutlet var timePickerTxt2: UITextField!
+    @IBOutlet var `break`: UISwitch!{
+        didSet{
+            breakTxt = "yes"
+        }
+    }
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
@@ -38,12 +43,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func breakSwitchChanged(_ sender: UISwitch) {
+        if sender.isOn{
+            breakTxt = "yes"
+        }
+        else{
+            breakTxt = "no"
+        }
+    }
+    
     //write data to database
     @IBAction func saveButtonClicked(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
         let date = dateFormatter.string(from: datePicker.date)
-        self.ref?.child("users").child("didikyawlinn").child("schedule").child(date).setValue(["start":timePickerTxt.text!,"end":timePickerTxt2.text!])
+        dateFormatter.dateFormat = "YYYY MMM"
+        let month = dateFormatter.string(from: datePicker.date)
+        self.ref?.child("users").child("didikyawlinn").child("schedule").child(month).child(date).setValue(["start":timePickerTxt.text!,"end":timePickerTxt2.text!,"break":breakTxt])
     }
     
     //create datePicker and timePicker

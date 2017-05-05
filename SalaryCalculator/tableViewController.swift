@@ -22,6 +22,7 @@ class tableViewController: UIViewController
     }
     
     var ref: FIRDatabaseReference?
+    let salaryCalculatorBrain = SalaryCalculatorBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,6 @@ class tableViewController: UIViewController
         ref = FIRDatabase.database().reference()
         
         showData()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +53,11 @@ class tableViewController: UIViewController
     }
     
     private func showData(){
-        ref?.child("users").child("didikyawlinn").child("schedule").observeSingleEvent(of: .value, with: { (snapshot) in
+        if items.today.isEmpty{
+            let date = Date()
+            items.today.append(salaryCalculatorBrain.formatDate(date: date, dateFormat: "YYYY MMM"))
+        }
+        ref?.child("users").child("didikyawlinn").child("schedule").child(items.today).observeSingleEvent(of: .value, with: { (snapshot) in
             self.clearData()
             // Get user value
             if let data = snapshot.children.allObjects as? [FIRDataSnapshot]{
@@ -73,7 +77,9 @@ class tableViewController: UIViewController
                                     items.startTime.append(dataString)
                                 }else if child2.key == "end"{
                                     items.endTime.append(dataString)
-                                }
+                                }else if child2.key == "break"{
+                                    items.breakBool.append(dataString)
+                            }
                         }
                     }
                 }
