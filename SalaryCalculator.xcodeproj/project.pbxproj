@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6EF8EB2067FF6F654FCDDB7 /* Pods_SalaryCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40042FE78A8BF9F0DC33F275 /* Pods_SalaryCalculator.framework */; };
 		E104EE601EF4DD550054CECC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E104EE5F1EF4DD550054CECC /* AppDelegate.swift */; };
-		E104EE621EF4DD550054CECC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E104EE611EF4DD550054CECC /* ViewController.swift */; };
-		E104EE651EF4DD550054CECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E104EE631EF4DD550054CECC /* Main.storyboard */; };
 		E104EE671EF4DD550054CECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E104EE661EF4DD550054CECC /* Assets.xcassets */; };
 		E104EE6A1EF4DD550054CECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E104EE681EF4DD550054CECC /* LaunchScreen.storyboard */; };
+		E1AA0A211EF5990C004247B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1AA0A201EF5990C004247B9 /* GoogleService-Info.plist */; };
+		E1AA0A251EF59D8F004247B9 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA0A241EF59D8F004247B9 /* HomeController.swift */; };
+		E1AA0A271EF5AE8C004247B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1AA0A261EF5AE8C004247B9 /* Main.storyboard */; };
+		E1AA0A2E1EF5BE91004247B9 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA0A2D1EF5BE91004247B9 /* SignInController.swift */; };
+		E1B0E2541EFC3079001277EE /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0E2531EFC3078001277EE /* PopUpController.swift */; };
+		E1D9B8FF1EF70BC8008B7651 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9B8FE1EF70BC8008B7651 /* TableViewController.swift */; };
+		E1E3F7941EFA5AC900F800B9 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3F7931EFA5AC900F800B9 /* DataCell.swift */; };
+		E1EC280B1EF66305008116DC /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC280A1EF66305008116DC /* data.swift */; };
+		E1ED08C21EF893D300260500 /* SalaryCalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ED08C11EF893D300260500 /* SalaryCalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A7A2A887BD06B1B15D7EE26 /* Pods-SalaryCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalaryCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-SalaryCalculator/Pods-SalaryCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		40042FE78A8BF9F0DC33F275 /* Pods_SalaryCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SalaryCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57CE856D21F2754B064A241C /* Pods-SalaryCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalaryCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SalaryCalculator/Pods-SalaryCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		E104EE5C1EF4DD550054CECC /* SalaryCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalaryCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E104EE5F1EF4DD550054CECC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E104EE611EF4DD550054CECC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E104EE641EF4DD550054CECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E104EE661EF4DD550054CECC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E104EE691EF4DD550054CECC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E104EE6B1EF4DD550054CECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1AA0A201EF5990C004247B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1AA0A241EF59D8F004247B9 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		E1AA0A261EF5AE8C004247B9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E1AA0A281EF5BCA9004247B9 /* SalaryCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SalaryCalculator.entitlements; sourceTree = "<group>"; };
+		E1AA0A2A1EF5BD64004247B9 /* SalaryCalculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SalaryCalculator-Bridging-Header.h"; sourceTree = "<group>"; };
+		E1AA0A2D1EF5BE91004247B9 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		E1B0E2531EFC3078001277EE /* PopUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
+		E1D9B8FE1EF70BC8008B7651 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E1E3F7931EFA5AC900F800B9 /* DataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
+		E1EC280A1EF66305008116DC /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		E1ED08C11EF893D300260500 /* SalaryCalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaryCalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6EF8EB2067FF6F654FCDDB7 /* Pods_SalaryCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD7223E36F3E71DD9EA1DAE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57CE856D21F2754B064A241C /* Pods-SalaryCalculator.debug.xcconfig */,
+				2A7A2A887BD06B1B15D7EE26 /* Pods-SalaryCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE53549575E8A23D01F830F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40042FE78A8BF9F0DC33F275 /* Pods_SalaryCalculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E104EE531EF4DD550054CECC = {
 			isa = PBXGroup;
 			children = (
 				E104EE5E1EF4DD550054CECC /* SalaryCalculator */,
 				E104EE5D1EF4DD550054CECC /* Products */,
+				CD7223E36F3E71DD9EA1DAE5 /* Pods */,
+				CE53549575E8A23D01F830F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +94,21 @@
 		E104EE5E1EF4DD550054CECC /* SalaryCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				E1AA0A281EF5BCA9004247B9 /* SalaryCalculator.entitlements */,
+				E1EC280A1EF66305008116DC /* data.swift */,
+				E1B0E2531EFC3078001277EE /* PopUpController.swift */,
+				E1ED08C11EF893D300260500 /* SalaryCalculatorBrain.swift */,
 				E104EE5F1EF4DD550054CECC /* AppDelegate.swift */,
-				E104EE611EF4DD550054CECC /* ViewController.swift */,
-				E104EE631EF4DD550054CECC /* Main.storyboard */,
+				E1E3F7931EFA5AC900F800B9 /* DataCell.swift */,
+				E1AA0A241EF59D8F004247B9 /* HomeController.swift */,
+				E1D9B8FE1EF70BC8008B7651 /* TableViewController.swift */,
+				E1AA0A2D1EF5BE91004247B9 /* SignInController.swift */,
 				E104EE661EF4DD550054CECC /* Assets.xcassets */,
+				E1AA0A261EF5AE8C004247B9 /* Main.storyboard */,
 				E104EE681EF4DD550054CECC /* LaunchScreen.storyboard */,
 				E104EE6B1EF4DD550054CECC /* Info.plist */,
+				E1AA0A201EF5990C004247B9 /* GoogleService-Info.plist */,
+				E1AA0A2A1EF5BD64004247B9 /* SalaryCalculator-Bridging-Header.h */,
 			);
 			path = SalaryCalculator;
 			sourceTree = "<group>";
@@ -71,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E104EE6E1EF4DD550054CECC /* Build configuration list for PBXNativeTarget "SalaryCalculator" */;
 			buildPhases = (
+				A71919949452BD3B890572FF /* [CP] Check Pods Manifest.lock */,
 				E104EE581EF4DD550054CECC /* Sources */,
 				E104EE591EF4DD550054CECC /* Frameworks */,
 				E104EE5A1EF4DD550054CECC /* Resources */,
+				AC2AEF6732532AA6B82F09B8 /* [CP] Embed Pods Frameworks */,
+				F24C43D3F434F180632145EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,7 +149,13 @@
 					E104EE5B1EF4DD550054CECC = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = EBWK75HAK4;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,34 +183,81 @@
 			buildActionMask = 2147483647;
 			files = (
 				E104EE6A1EF4DD550054CECC /* LaunchScreen.storyboard in Resources */,
+				E1AA0A211EF5990C004247B9 /* GoogleService-Info.plist in Resources */,
 				E104EE671EF4DD550054CECC /* Assets.xcassets in Resources */,
-				E104EE651EF4DD550054CECC /* Main.storyboard in Resources */,
+				E1AA0A271EF5AE8C004247B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A71919949452BD3B890572FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC2AEF6732532AA6B82F09B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SalaryCalculator/Pods-SalaryCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F24C43D3F434F180632145EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SalaryCalculator/Pods-SalaryCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E104EE581EF4DD550054CECC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E104EE621EF4DD550054CECC /* ViewController.swift in Sources */,
+				E1B0E2541EFC3079001277EE /* PopUpController.swift in Sources */,
+				E1ED08C21EF893D300260500 /* SalaryCalculatorBrain.swift in Sources */,
+				E1AA0A2E1EF5BE91004247B9 /* SignInController.swift in Sources */,
+				E1D9B8FF1EF70BC8008B7651 /* TableViewController.swift in Sources */,
+				E1E3F7941EFA5AC900F800B9 /* DataCell.swift in Sources */,
 				E104EE601EF4DD550054CECC /* AppDelegate.swift in Sources */,
+				E1AA0A251EF59D8F004247B9 /* HomeController.swift in Sources */,
+				E1EC280B1EF66305008116DC /* data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E104EE631EF4DD550054CECC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E104EE641EF4DD550054CECC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E104EE681EF4DD550054CECC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -259,26 +364,37 @@
 		};
 		E104EE6F1EF4DD550054CECC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57CE856D21F2754B064A241C /* Pods-SalaryCalculator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SalaryCalculator/SalaryCalculator.entitlements;
 				DEVELOPMENT_TEAM = EBWK75HAK4;
 				INFOPLIST_FILE = SalaryCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KyawLin.SalaryCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SalaryCalculator/SalaryCalculator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		E104EE701EF4DD550054CECC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A7A2A887BD06B1B15D7EE26 /* Pods-SalaryCalculator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SalaryCalculator/SalaryCalculator.entitlements;
 				DEVELOPMENT_TEAM = EBWK75HAK4;
 				INFOPLIST_FILE = SalaryCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KyawLin.SalaryCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SalaryCalculator/SalaryCalculator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +418,7 @@
 				E104EE701EF4DD550054CECC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
