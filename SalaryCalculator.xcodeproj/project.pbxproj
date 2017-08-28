@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08C2AF000D0CC5F467D229EA /* Pods_SalaryCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115896250000B49F6ED20E32 /* Pods_SalaryCalculator.framework */; };
-		E18B8DA71EA6C6FC009F1248 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E18B8DA61EA6C6FC009F1248 /* GoogleService-Info.plist */; };
+		E11EF87D1F52ACEC00AFAD82 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11EF87C1F52ACEC00AFAD82 /* TableViewCell.swift */; };
 		E18C00C81E922004003DF5CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C00C71E922004003DF5CA /* AppDelegate.swift */; };
 		E18C00CA1E922004003DF5CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C00C91E922004003DF5CA /* ViewController.swift */; };
 		E18C00CD1E922004003DF5CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18C00CB1E922004003DF5CA /* Main.storyboard */; };
@@ -17,13 +17,15 @@
 		E1AD22431EA6F35900F4AF62 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD22421EA6F35900F4AF62 /* tableViewController.swift */; };
 		E1C0D2C71EB304D6001FF193 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C0D2C61EB304D6001FF193 /* data.swift */; };
 		E1E1A0111EA9265000A58A89 /* SalaryCalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1A0101EA9265000A58A89 /* SalaryCalculatorBrain.swift */; };
+		E1F4F68A1F51541700360AD6 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F4F6881F51541700360AD6 /* SignInController.swift */; };
+		E1F4F68D1F515BEC00360AD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1F4F68C1F515BEC00360AD6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		115896250000B49F6ED20E32 /* Pods_SalaryCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SalaryCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71EE4A283D39F6E0482FBB40 /* Pods-SalaryCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalaryCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-SalaryCalculator/Pods-SalaryCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		97C142EDEF09FBEE3498E330 /* Pods-SalaryCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalaryCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SalaryCalculator/Pods-SalaryCalculator.debug.xcconfig"; sourceTree = "<group>"; };
-		E18B8DA61EA6C6FC009F1248 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E11EF87C1F52ACEC00AFAD82 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E18C00C41E922004003DF5CA /* SalaryCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalaryCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18C00C71E922004003DF5CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E18C00C91E922004003DF5CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		E1AD22421EA6F35900F4AF62 /* tableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
 		E1C0D2C61EB304D6001FF193 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		E1E1A0101EA9265000A58A89 /* SalaryCalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaryCalculatorBrain.swift; sourceTree = "<group>"; };
+		E1F4F6881F51541700360AD6 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		E1F4F68C1F515BEC00360AD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,15 +90,17 @@
 		E18C00C61E922004003DF5CA /* SalaryCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				E1C0D2C61EB304D6001FF193 /* data.swift */,
-				E1E1A0101EA9265000A58A89 /* SalaryCalculatorBrain.swift */,
 				E18C00C71E922004003DF5CA /* AppDelegate.swift */,
+				E1C0D2C61EB304D6001FF193 /* data.swift */,
+				E11EF87C1F52ACEC00AFAD82 /* TableViewCell.swift */,
+				E1F4F6881F51541700360AD6 /* SignInController.swift */,
+				E1E1A0101EA9265000A58A89 /* SalaryCalculatorBrain.swift */,
 				E18C00C91E922004003DF5CA /* ViewController.swift */,
 				E18C00CB1E922004003DF5CA /* Main.storyboard */,
 				E1AD22421EA6F35900F4AF62 /* tableViewController.swift */,
 				E18C00CE1E922004003DF5CA /* Assets.xcassets */,
 				E18C00D01E922004003DF5CA /* LaunchScreen.storyboard */,
-				E18B8DA61EA6C6FC009F1248 /* GoogleService-Info.plist */,
+				E1F4F68C1F515BEC00360AD6 /* GoogleService-Info.plist */,
 				E18C00D31E922004003DF5CA /* Info.plist */,
 			);
 			path = SalaryCalculator;
@@ -164,8 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18C00D21E922004003DF5CA /* LaunchScreen.storyboard in Resources */,
-				E18B8DA71EA6C6FC009F1248 /* GoogleService-Info.plist in Resources */,
 				E18C00CF1E922004003DF5CA /* Assets.xcassets in Resources */,
+				E1F4F68D1F515BEC00360AD6 /* GoogleService-Info.plist in Resources */,
 				E18C00CD1E922004003DF5CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +234,9 @@
 				E1E1A0111EA9265000A58A89 /* SalaryCalculatorBrain.swift in Sources */,
 				E1C0D2C71EB304D6001FF193 /* data.swift in Sources */,
 				E1AD22431EA6F35900F4AF62 /* tableViewController.swift in Sources */,
+				E1F4F68A1F51541700360AD6 /* SignInController.swift in Sources */,
 				E18C00CA1E922004003DF5CA /* ViewController.swift in Sources */,
+				E11EF87D1F52ACEC00AFAD82 /* TableViewCell.swift in Sources */,
 				E18C00C81E922004003DF5CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

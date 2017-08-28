@@ -55,11 +55,12 @@ class ViewController: UIViewController {
     //write data to database
     @IBAction func saveButtonClicked(_ sender: Any) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         let date = dateFormatter.string(from: datePicker.date)
-        dateFormatter.dateFormat = "YYYY MMM"
+        dateFormatter.dateFormat = "MM yyyy"
         let month = dateFormatter.string(from: datePicker.date)
-        self.ref?.child("users").child("didikyawlinn").child("schedule").child(month).child(date).setValue(["start":timePickerTxt.text!,"end":timePickerTxt2.text!,"break":breakTxt])
+        let uid =  FIRAuth.auth()?.currentUser?.uid
+        self.ref?.child("users").child(uid!).child("schedule").child(month).child(date).setValue(["start":timePickerTxt.text!,"end":timePickerTxt2.text!,"break":breakTxt])
     }
     
     //create datePicker and timePicker

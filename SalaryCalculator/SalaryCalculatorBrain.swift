@@ -21,7 +21,7 @@ class SalaryCalculatorBrain{
         return dateFormatter.string(from: date)
     }
     
-    public func calculate(){
+    public func calculate() -> Double{
         
         if items.startTime.count > 0{
             for i in 1...items.startTime.count{
@@ -54,6 +54,8 @@ class SalaryCalculatorBrain{
             totalTime = holiday + weekday
             salary = holiday*8.5 + weekday*7
             print(salary)
+            
         }
+        return salary
     }
 }

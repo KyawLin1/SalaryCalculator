@@ -11,10 +11,11 @@ import Firebase
 
 class tableViewController: UIViewController
 , UITableViewDelegate, UITableViewDataSource{
-
-   
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var salaryLabel: UILabel!
     @IBAction func textButton(_ sender: UIButton) {
         
         let salaryCalculatorBrain = SalaryCalculatorBrain()
@@ -26,7 +27,7 @@ class tableViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -35,7 +36,7 @@ class tableViewController: UIViewController
         
         showData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,8 +47,12 @@ class tableViewController: UIViewController
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") //as! TableViewCell
         
+        /*cell.dateLabel.text = items.workDate[indexPath.row]
+         cell.dayLabel.text = items.workDay[indexPath.row]
+         cell.startLabel.text = items.startTime[indexPath.row]
+         cell.endLabel.text = items.endTime[indexPath.row]*/
         cell?.textLabel?.text = items.workDate[indexPath.row]+" "+items.workDay[indexPath.row]+"\t\t"+items.startTime[indexPath.row]+"\t"+items.endTime[indexPath.row]
         return cell!
     }
@@ -55,17 +60,19 @@ class tableViewController: UIViewController
     private func showData(){
         if items.today.isEmpty{
             let date = Date()
-            items.today.append(salaryCalculatorBrain.formatDate(date: date, dateFormat: "YYYY MMM"))
+            items.today.append(salaryCalculatorBrain.formatDate(date: date, dateFormat: "dd-MM-yyyy"))
+            items.thisMonth.append(salaryCalculatorBrain.formatDate(date: date, dateFormat: "MM YYYY"))
         }
-        ref?.child("users").child("didikyawlinn").child("schedule").child(items.today).observeSingleEvent(of: .value, with: { (snapshot) in
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        ref?.child("users").child(uid!).child("schedule").child(items.thisMonth).observeSingleEvent(of: .value, with: { (snapshot) in
             self.clearData()
             // Get user value
             if let data = snapshot.children.allObjects as? [FIRDataSnapshot]{
                 for child in data{
                     let dateFormatter2 = DateFormatter()
-                    dateFormatter2.dateStyle = .full
+                    dateFormatter2.dateFormat = "dd-MM-yyyy"
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "EEEE"
+                    dateFormatter.dateFormat = "EEE"
                     let string = dateFormatter.string(from: dateFormatter2.date(from: child.key)!)
                     items.workDay.append(string)
                     dateFormatter.dateStyle = .short
@@ -73,18 +80,21 @@ class tableViewController: UIViewController
                     if let childData = child.children.allObjects as? [FIRDataSnapshot]{
                         for child2 in childData{
                             let dataString = child2.value as! String
-                                if child2.key == "start"{
-                                    items.startTime.append(dataString)
-                                }else if child2.key == "end"{
-                                    items.endTime.append(dataString)
-                                }else if child2.key == "break"{
-                                    items.breakBool.append(dataString)
+                            if child2.key == "start"{
+                                items.startTime.append(dataString)
+                            }else if child2.key == "end"{
+                                items.endTime.append(dataString)
+                            }else if child2.key == "break"{
+                                items.breakBool.append(dataString)
                             }
                         }
                     }
+                    print(items.startTime.count)
                 }
             }
-                self.tableView.reloadData()
+            self.tableView.reloadData()
+            self.salaryLabel.text = "S$ " + String(self.salaryCalculatorBrain.calculate())
+            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -101,15 +111,15 @@ class tableViewController: UIViewController
         items.workDate.removeAll()
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

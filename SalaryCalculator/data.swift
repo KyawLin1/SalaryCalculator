@@ -16,4 +16,5 @@ struct items{
     static var workDay = [String]()
     static var breakBool = [String]()
     static var today = String()
+    static var thisMonth = String()
 }
