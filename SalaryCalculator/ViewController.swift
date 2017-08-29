@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         createDatePicker()
         createTimePicker()
         datePickerTxt.text = formatDate()
-        
+        self.title = FIRAuth.auth()?.currentUser?.displayName
         ref = FIRDatabase.database().reference()
         
     }
@@ -54,11 +54,8 @@ class ViewController: UIViewController {
     
     //write data to database
     @IBAction func saveButtonClicked(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let date = dateFormatter.string(from: datePicker.date)
-        dateFormatter.dateFormat = "MM yyyy"
-        let month = dateFormatter.string(from: datePicker.date)
+        let date = formatDate(format: "dd-MM-yyyy", date: datePicker.date)
+        let month = formatDate(format: "MM yyyy", date: datePicker.date)
         let uid =  FIRAuth.auth()?.currentUser?.uid
         self.ref?.child("users").child(uid!).child("schedule").child(month).child(date).setValue(["start":timePickerTxt.text!,"end":timePickerTxt2.text!,"break":breakTxt])
     }
@@ -95,11 +92,8 @@ class ViewController: UIViewController {
         
         timePickerTxt.inputAccessoryView = toolbar
         timePickerTxt2.inputAccessoryView = toolbar2
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm aa"
-        timePicker.date = dateFormatter.date(from: timePickerTxt.text!)!
-        timePicker2.date = dateFormatter.date(from: timePickerTxt2.text!)!
+        timePicker.date = formatTime(format: "hh:mm aa", time: timePickerTxt.text!)
+        timePicker2.date = formatTime(format: "hh:mm aa", time: timePickerTxt2.text!)
         timePickerTxt.inputView = timePicker
         timePickerTxt2.inputView = timePicker2
     }
@@ -131,7 +125,22 @@ class ViewController: UIViewController {
         datePickerTxt.text = formatDate()
         self.view.endEditing(true)
     }
+}
 
-
+extension UIViewController{
+    
+    func formatTime(format:String,time:String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.date(from: time)!
+        
+    }
+    
+    func formatDate(format:String,date:Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: date)
+    }
+    
 }
 

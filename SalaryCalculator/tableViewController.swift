@@ -16,11 +16,6 @@ class tableViewController: UIViewController
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var salaryLabel: UILabel!
-    @IBAction func textButton(_ sender: UIButton) {
-        
-        let salaryCalculatorBrain = SalaryCalculatorBrain()
-        salaryCalculatorBrain.calculate()
-    }
     
     var ref: FIRDatabaseReference?
     let salaryCalculatorBrain = SalaryCalculatorBrain()
@@ -47,22 +42,25 @@ class tableViewController: UIViewController
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") //as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! HistoryCell
         
-        /*cell.dateLabel.text = items.workDate[indexPath.row]
-         cell.dayLabel.text = items.workDay[indexPath.row]
-         cell.startLabel.text = items.startTime[indexPath.row]
-         cell.endLabel.text = items.endTime[indexPath.row]*/
-        cell?.textLabel?.text = items.workDate[indexPath.row]+" "+items.workDay[indexPath.row]+"\t\t"+items.startTime[indexPath.row]+"\t"+items.endTime[indexPath.row]
-        return cell!
+        cell.dateLabel.text = items.workDate[indexPath.row]
+        cell.dayLabel.text = items.workDay[indexPath.row]
+        cell.startLabel.text = items.startTime[indexPath.row]
+        cell.endLabel.text = items.endTime[indexPath.row]
+        let brain = SalaryCalculatorBrain()
+        cell.salaryLabel.text = String(brain.calculateDaily(index: indexPath.row))
+        //cell.textLabel?.text = items.workDate[indexPath.row]+" "+items.workDay[indexPath.row]+"\t\t"+items.startTime[indexPath.row]+"\t"+items.endTime[indexPath.row] + "\t\(brain.calculateDaily(index: indexPath.row))"
+        return cell
     }
     
     private func showData(){
         if items.today.isEmpty{
             let date = Date()
             items.today.append(salaryCalculatorBrain.formatDate(date: date, dateFormat: "dd-MM-yyyy"))
-            items.thisMonth.append(salaryCalculatorBrain.formatDate(date: date, dateFormat: "MM YYYY"))
+            items.thisMonth.append(salaryCalculatorBrain.formatDate(date: date, dateFormat: "MM yyyy"))
         }
+        self.title = formatDate(format: "MMMM", date: formatTime(format: "MM yyyy", time: items.thisMonth))
         let uid = FIRAuth.auth()?.currentUser?.uid
         ref?.child("users").child(uid!).child("schedule").child(items.thisMonth).observeSingleEvent(of: .value, with: { (snapshot) in
             self.clearData()
@@ -89,11 +87,11 @@ class tableViewController: UIViewController
                             }
                         }
                     }
-                    print(items.startTime.count)
                 }
             }
             self.tableView.reloadData()
-            self.salaryLabel.text = "S$ " + String(self.salaryCalculatorBrain.calculate())
+            let salary = String(self.salaryCalculatorBrain.calculate())
+            self.salaryLabel.text = items.totalTime + " hours >> S$ " + salary
             
         }) { (error) in
             print(error.localizedDescription)

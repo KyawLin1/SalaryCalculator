@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFB-I8-Qhz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KFB-I8-Qhz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SalaryCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="SalaryCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -135,7 +135,9 @@
                             <constraint firstItem="dli-xh-5Re" firstAttribute="top" secondItem="Usg-Eo-RhQ" secondAttribute="bottom" constant="8" symbolic="YES" id="vS9-oy-pxF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RWQ-JB-EYS"/>
+                    <navigationItem key="navigationItem" id="RWQ-JB-EYS">
+                        <barButtonItem key="rightBarButtonItem" title="····" id="1NP-Q5-ce4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="break" destination="ukg-kP-EVS" id="66t-zn-sXq"/>
                         <outlet property="datePickerTxt" destination="L7Y-s7-qOU" id="QsE-i2-D0T"/>
@@ -159,18 +161,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsU-Rj-Vuw">
-                                <rect key="frame" x="172" y="600" width="30" height="30"/>
-                                <state key="normal" title="GO!"/>
-                                <connections>
-                                    <action selector="textButton:" destination="sxp-Nc-xwT" eventType="touchUpInside" id="qYz-sv-XLH"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-Qj-5yT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="528"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="592"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" id="OYh-Bw-x6o" customClass="TableViewCell" customModule="SalaryCalculator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" id="OYh-Bw-x6o" customClass="HistoryCell" customModule="SalaryCalculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OYh-Bw-x6o" id="gr2-hU-Gum">
@@ -180,9 +175,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sia-7L-wq6">
-                                <rect key="frame" x="16" y="609" width="137" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sia-7L-wq6">
+                                <rect key="frame" x="16" y="609" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -190,15 +184,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NbF-Qj-5yT" firstAttribute="centerX" secondItem="jsU-Rj-Vuw" secondAttribute="centerX" id="6Uu-th-x1w"/>
-                            <constraint firstItem="1Fy-lA-gE1" firstAttribute="top" secondItem="jsU-Rj-Vuw" secondAttribute="bottom" constant="37" id="7vK-8Q-GkY"/>
-                            <constraint firstItem="NbF-Qj-5yT" firstAttribute="top" secondItem="ZG6-x5-wfM" secondAttribute="bottom" id="AvJ-Oc-1x8"/>
-                            <constraint firstItem="jsU-Rj-Vuw" firstAttribute="top" secondItem="NbF-Qj-5yT" secondAttribute="bottom" constant="8" symbolic="YES" id="BIq-Sd-sVc"/>
-                            <constraint firstAttribute="trailing" secondItem="NbF-Qj-5yT" secondAttribute="trailing" id="CaF-80-bdK"/>
-                            <constraint firstItem="NbF-Qj-5yT" firstAttribute="leading" secondItem="Kcq-lW-heX" secondAttribute="leading" id="J2Q-Vw-MA7"/>
+                            <constraint firstAttribute="trailing" secondItem="NbF-Qj-5yT" secondAttribute="trailing" id="0yg-nh-5Hk"/>
+                            <constraint firstItem="NbF-Qj-5yT" firstAttribute="leading" secondItem="Kcq-lW-heX" secondAttribute="leading" id="Big-jS-D4C"/>
+                            <constraint firstItem="NbF-Qj-5yT" firstAttribute="top" secondItem="Kcq-lW-heX" secondAttribute="top" id="K2B-cM-YTa"/>
+                            <constraint firstItem="sia-7L-wq6" firstAttribute="top" secondItem="NbF-Qj-5yT" secondAttribute="bottom" constant="17" id="TgI-qa-Zt8"/>
+                            <constraint firstItem="1Fy-lA-gE1" firstAttribute="top" secondItem="sia-7L-wq6" secondAttribute="bottom" constant="37" id="ZG8-Ot-y5o"/>
+                            <constraint firstItem="sia-7L-wq6" firstAttribute="leading" secondItem="Kcq-lW-heX" secondAttribute="leadingMargin" id="ddL-OS-jmd"/>
+                            <constraint firstItem="NbF-Qj-5yT" firstAttribute="centerX" secondItem="sia-7L-wq6" secondAttribute="centerX" id="yhx-jh-1A6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8t9-ss-Qc2"/>
+                    <navigationItem key="navigationItem" id="8t9-ss-Qc2">
+                        <barButtonItem key="rightBarButtonItem" title="····" id="6zs-IE-vrK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="salaryLabel" destination="sia-7L-wq6" id="lom-sj-s5o"/>
                         <outlet property="tableView" destination="NbF-Qj-5yT" id="wNP-DG-QXF"/>
@@ -211,10 +208,10 @@
         <!--Navigation Controller-->
         <scene sceneID="cZO-4J-Ixl">
             <objects>
-                <navigationController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="Dtg-9t-QLQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navi" automaticallyAdjustsScrollViewInsets="NO" id="Dtg-9t-QLQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="ZhJ-X7-koR"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PcS-Ax-xBN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PcS-Ax-xBN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

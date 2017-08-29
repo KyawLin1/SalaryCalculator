@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         if FIRAuth.auth()?.currentUser != nil{
             //User is singed in.
-            let viewController = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "Home") as! UINavigationController
+            let viewController = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "Navi") as! UINavigationController
             self.window?.rootViewController = viewController
         }else{
             //No user is signed in
-            GIDSignIn.sharedInstance().signIn()
+            //GIDSignIn.sharedInstance().signIn()
         }
         return true
     }
@@ -57,6 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             }
             print("Signed into Firebase")
+            let viewController = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "Home") as! ViewController
+            self.window?.rootViewController = viewController
+            
         })
         
         

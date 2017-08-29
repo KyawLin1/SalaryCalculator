@@ -23,6 +23,7 @@ class SalaryCalculatorBrain{
     
     public func calculate() -> Double{
         
+        reset()
         if items.startTime.count > 0{
             for i in 1...items.startTime.count{
                 dateFormatter.dateStyle = .none
@@ -30,12 +31,16 @@ class SalaryCalculatorBrain{
                 dateFormatter.dateFormat = "hh:mm aa"
                 let sTime = dateFormatter.date(from: items.startTime[i-1])!
                 let eTime = dateFormatter.date(from: items.endTime[i-1])!
-                let timeInterval = eTime.timeIntervalSince(sTime)/3600
+                var timeInterval = eTime.timeIntervalSince(sTime)/3600
+                let latestTime = formatTime(format: "hh:mm aa", string: "04:00 PM")
+                if sTime < latestTime{
+                    timeInterval = timeInterval - 1.0
+                }
                 switch items.workDay[i-1]{
-                    case "Saturday","Sunday":
-                        items.holidayWorkTime.append(String(timeInterval))
-                    default:
-                        items.weekdayWorkTime.append(String(timeInterval))
+                case "Sat","Sun":
+                    items.holidayWorkTime.append(String(timeInterval))
+                default:
+                    items.weekdayWorkTime.append(String(timeInterval))
                 }
             }
             
@@ -52,10 +57,56 @@ class SalaryCalculatorBrain{
             }
             
             totalTime = holiday + weekday
+            items.totalTime.append(String(totalTime))
             salary = holiday*8.5 + weekday*7
-            print(salary)
+            if totalTime > 60 {
+                salary = salary * 1.12
+            }
             
         }
         return salary
     }
+    
+    private func reset(){
+        items.holidayWorkTime.removeAll()
+        items.weekdayWorkTime.removeAll()
+        items.totalTime.removeAll()
+    }
+    
+    public func calculateDaily(index:Int) -> Double{
+        var salary = 0.0
+        
+        let sTime = formatTime(format: "hh:mm aa", string: items.startTime[index])
+        let eTime = formatTime(format: "hh:mm aa", string: items.endTime[index])
+        var timeInterval = eTime.timeIntervalSince(sTime)/3600
+        let latestTime = formatTime(format: "hh:mm aa", string: "04:00 PM")
+        if sTime < latestTime{
+            timeInterval = timeInterval - 1.0
+        }
+        switch items.workDay[index]{
+        case "Sat","Sun":
+            salary = timeInterval * 8.5
+        default:
+            salary = timeInterval * 7
+        }
+        return salary
+    }
 }
+
+extension SalaryCalculatorBrain{
+    func formatTime(format:String,string:String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.date(from: string)!
+        
+    }
+    
+    func formatDate(format:String,date:Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: date)
+    }
+}
+
+
+

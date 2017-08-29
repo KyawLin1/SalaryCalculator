@@ -17,4 +17,5 @@ struct items{
     static var breakBool = [String]()
     static var today = String()
     static var thisMonth = String()
+    static var totalTime = String()
 }
